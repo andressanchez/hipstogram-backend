@@ -15,10 +15,7 @@
 
 package com.hipstogram.context.config;
 
-import com.hipstogram.context.config.sections.CassandraSection;
-import com.hipstogram.context.config.sections.KafkaSection;
-import com.hipstogram.context.config.sections.ServerSection;
-import com.hipstogram.context.config.sections.ZookeeperSection;
+import com.hipstogram.context.config.sections.*;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.HierarchicalINIConfiguration;
 
@@ -34,6 +31,7 @@ public class Config
     private ServerSection serverSection;
     private ZookeeperSection zookeeperSection;
     private CassandraSection cassandraSection;
+    private MongoDBSection mongoSection;
 
     public Config(File configFile, File... otherConfigFile) throws ConfigurationException {
         HierarchicalINIConfiguration iniConfig = new HierarchicalINIConfiguration(configFile);
@@ -41,6 +39,7 @@ public class Config
         this.serverSection = new ServerSection(iniConfig.getSection("server"));
         this.zookeeperSection = new ZookeeperSection(iniConfig.getSection("zookeeper"));
         this.cassandraSection = new CassandraSection(iniConfig.getSection("cassandra"));
+        this.mongoSection = new MongoDBSection(iniConfig.getSection("mongodb"));
     }
 
     public KafkaSection getKafkaSection() { return kafkaSection; }
@@ -55,5 +54,9 @@ public class Config
 
     public CassandraSection getCassandraSection() {
         return cassandraSection;
+    }
+
+    public MongoDBSection getMongoSection() {
+        return mongoSection;
     }
 }

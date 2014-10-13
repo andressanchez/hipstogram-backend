@@ -22,21 +22,22 @@ import com.google.gson.Gson;
 import com.hipstogram.cassandra.CassandraClient;
 import com.hipstogram.context.HipstogramContext;
 import com.hipstogram.context.config.sections.CassandraSection;
-import com.hipstogram.model.DataAccessor;
-import com.hipstogram.model.TrackCount;
+import com.hipstogram.cassandra.DataAccessor;
+import com.hipstogram.cassandra.TrackCount;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
+
 /**
  * Histogram resource
  * @author Andrés Sánchez
  */
 
 @Path("/histogram/{uri}")
-public class HistogramResource
+public class HistogramCassandraResource
 {
     // Cassandra stuff
     private CassandraClient client;
@@ -50,7 +51,7 @@ public class HistogramResource
     /**
      * Create a new instance of this class
      */
-    public HistogramResource()
+    public HistogramCassandraResource()
     {
         // Cassandra
         CassandraSection cassandraSection = HipstogramContext.getInstance().getConfiguration().getCassandraSection();

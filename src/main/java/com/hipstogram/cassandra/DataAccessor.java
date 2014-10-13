@@ -13,7 +13,7 @@
  *  limitations under the License.
  */
 
-package com.hipstogram.model;
+package com.hipstogram.cassandra;
 
 import com.datastax.driver.mapping.Result;
 import com.datastax.driver.mapping.annotations.Accessor;

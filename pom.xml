@@ -86,6 +86,19 @@
             <version>2.1.0</version>
         </dependency>
 
+        <!-- MongoDB -->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+
+        <!-- Morphia -->
+        <dependency>
+            <groupId>org.mongodb.morphia</groupId>
+            <artifactId>morphia</artifactId>
+            <version>0.108</version>
+        </dependency>
 
     </dependencies>
 

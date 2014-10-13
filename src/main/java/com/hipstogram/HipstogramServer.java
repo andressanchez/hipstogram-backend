@@ -45,7 +45,7 @@ public class HipstogramServer
         List<Object> resources = new ArrayList<Object>();
         resources.add(new HelloWorldResource());
         resources.add(new EventsResource());
-        resources.add(new HistogramResource());
+        resources.add(new HistogramMongoDBResource());
         return resources;
     }
 
